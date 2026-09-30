@@ -32,7 +32,7 @@ ENABLED=([thumbs]=1 [cache]=1 [tmp]=0 [pip]=0 [history]=0 [packages]=0 [journal]
 DAYS=([thumbs]=30 [cache]=60 [tmp]=14 [pip]=60 [history]=0 [packages]=0 [journal]=30)
 
 valid_id() { local x; for x in "${IDS[@]}"; do [[ "$x" == "$1" ]] && return 0; done; return 1; }
-valid_days() { [[ "$1" =~ ^[0-9]{1,4}$ ]] && (( 10#$1 <= 3650 )); }
+valid_days() { [[ "$1" =~ ^[0-9]{1,4}$ ]] && (( 10#${1} <= 3650 )); }
 
 safe_custom() {
   local raw=$1 resolved forbidden

@@ -55,7 +55,14 @@ La carpeta personalizada debe existir dentro de `HOME`, no ser un enlace simból
 
 ```bash
 bash -n linux_mantenimiento.sh
+./tests/run.sh
 ./linux_mantenimiento.sh --help
+```
+
+La integración continua ejecuta sintaxis, ShellCheck y la suite local en Ubuntu. Para reproducir el lint completo localmente instala `shellcheck` y ejecuta:
+
+```bash
+shellcheck linux_mantenimiento.sh tests/run.sh
 ```
 
 Consulta de comandos: [GNU find](https://www.man7.org/linux/man-pages/man1/find.1.html), [APT](https://manpages.debian.org/bookworm/apt/apt-get.8), [journalctl](https://www.freedesktop.org/software/systemd/man/latest/journalctl.html). Para DNF, usa la documentación de tu distribución instalada (`man dnf`).

@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax check
+        run: bash -n linux_mantenimiento.sh
+      - name: ShellCheck
+        run: shellcheck linux_mantenimiento.sh tests/run.sh
+      - name: Tests
+        run: bash tests/run.sh
